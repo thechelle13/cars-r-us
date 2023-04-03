@@ -1,6 +1,6 @@
 // create import so can access array in database - invoke to use.
 
-import { getTechnologies, setTechnologies } from "./database";
+import { getTechnologies, setTechnologies } from "./database.js";
 
 const technologies = getTechnologies()
 
@@ -16,8 +16,18 @@ const technologies = getTechnologies()
 
 // To get the option that the user selected, you would access the .value property of the <select> element, not the individual options.
 
+// document.addEventListener(
+//     "change",
+//     (changeEvent) => {
+//         if (changeEvent.target.id === "resource") {
+//             const chosenOption = changeEvent.target.value
+//             console.log(chosenOption)  // "1" or "2"
+//         }
+//     }
+// )
+
 document.addEventListener(
-    "change",
+    "click",
     (event) => {
         if (event.target.id === "technology") {
             setTechnologies(parseInt(event.target.value))
@@ -27,18 +37,17 @@ document.addEventListener(
 
 
 export const Technologies = () => {
-    const customOrder = getCurrentOrder()
+    //const customOrder = getCurrentOrder()
     // ${customOrder.metalId === metal.id ? "ch 
-    let html = "<ul>"
+    let html = "<select>"
 
     // This is how you have been converting objects to <li> elements
     for (const technology of technologies) {
-        html += `<li>
-            <input type="radio" name="technology" value="${technology.id}" /> ${technology.technology}
-        </li>`
+        html += `<option value="${technology.id}" /> ${technology.technology}
+        </option>`
     }
     
-    html += "</ul>"
+    html += "</select>"
 
     return html
 }

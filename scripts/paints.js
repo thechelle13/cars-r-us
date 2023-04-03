@@ -1,6 +1,6 @@
 // create import so can access array in database - invoke to use.
 
-import { getPaints, setPaints } from "./database";
+import { getPaints, setPaints } from "./database.js";
 
 const paints = getPaints()
 
@@ -16,8 +16,18 @@ const paints = getPaints()
 
 // To get the option that the user selected, you would access the .value property of the <select> element, not the individual options.
 
+// document.addEventListener(
+//     "change",
+//     (changeEvent) => {
+//         if (changeEvent.target.id === "resource") {
+//             const chosenOption = changeEvent.target.value
+//             console.log(chosenOption)  // "1" or "2"
+//         }
+//     }
+// )
+
 document.addEventListener(
-    "change",
+    "click",
     (event) => {
         if (event.target.id === "paints") {
             setPaints(parseInt(event.target.value))
@@ -28,18 +38,17 @@ document.addEventListener(
 
 
 export const Paints = () => {
-    const customOrder = getCurrentOrder()
+    //const customOrder = getCurrentOrder()
     // ${customOrder.metalId === metal.id ? "ch 
-    let html = "<ul>"
+    let html = "<select>"
 
     // This is how you have been converting objects to <li> elements
     for (const paint of paints) {
-        html += `<li>
-            <input type="radio" name="paint" value="${paint.id}" /> ${paint.paint}
-        </li>`
+        html += `<option value="${paint.id}" /> ${paint.paint}
+        </option>`
     }
     
-    html += "</ul>"
+    html += "</select>"
 
     return html
 }

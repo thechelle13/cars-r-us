@@ -1,16 +1,16 @@
-// import 
-import { Wheels } from "./wheels"
-import { Interiors } from "./interiors"
-import { Paints } from "./paints"
-import { Technologies } from "./technologies"
-import { addCustomOrder } from "./database"
+import { Wheels } from "./wheels.js"
+import { Interiors } from "./interiors.js"
+import { Paints } from "./paints.js"
+import { Technologies } from "./technologies.js"
+import { addCustomOrder } from "./database.js"
+import { Orders } from "./orders.js"
 
 // invoke 
 // HTML
 // event listener with click not change
 
 document.addEventListener(
-    "click",
+    "change",
     (event) => {
         if (event.target.id === "order") {
             addCustomOrder()
@@ -48,8 +48,7 @@ export const CarsRus = () => {
         </article>
 
         <article class="customOrders">
-            <h2>Custom Car Add-On Options</h2>
-                
+            <h2>Custom Car Add-On Options</h2>        
                 ${Orders()}
         </article>
     `

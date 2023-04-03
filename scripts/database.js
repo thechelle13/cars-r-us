@@ -28,6 +28,15 @@ const database = {
         { id: 2, technology: "Navigation Package ( includes intergrated navigation controls)", price: 300},
         { id: 3, technology: "Visibility Package ( includes side and rear cameras)", price: 300},
         { id: 4, technology: "Ultra Package (includes the Navigation and Visibility packages)", price: 300}
+        ],
+        customOrders: [
+            {
+                id: 1,
+                interiorId: 4,
+                paintId: 4,
+                wheelId: 4,
+                technologyId: 4
+            }
         ]
 }
 
@@ -90,9 +99,10 @@ export const addCustomOrder = () => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
-export const getCurrentOrder = () => {
-    return database.orderBuilder
-}
+// export const getCurrentOrder = () => {
+//     return database.orderBuilder
+// }
+
 export const getOrders = () => {
     return database.customOrders.map(order => ({...order}))
 }

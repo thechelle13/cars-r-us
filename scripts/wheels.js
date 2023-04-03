@@ -1,6 +1,6 @@
 // create import so can access array in database - invoke to use.
 
-import { getWheels, setWheels } from "./database";
+import { getWheels, setWheels, } from "./database.js";
 
 const wheels = getWheels()
 
@@ -17,8 +17,19 @@ const wheels = getWheels()
 
 // To get the option that the user selected, you would access the .value property of the <select> element, not the individual options.
 
+// document.addEventListener(
+//     "change",
+//     (changeEvent) => {
+//         if (changeEvent.target.id === "resource") {
+//             const chosenOption = changeEvent.target.value
+//             console.log(chosenOption)  // "1" or "2"
+//         }
+//     }
+// )
+
+
 document.addEventListener(
-    "change",
+    "click",
     (event) => {
         if (event.target.id === "wheels") {
             setWheels(parseInt(event.target.value))
@@ -30,7 +41,7 @@ document.addEventListener(
 
 
 export const Wheels = () => {
-    const customOrder = getCurrentOrder()
+    //const customOrder = getCurrentOrder()
     // ${customOrder.metalId === metal.id ? "ch 
     let html = "<select>"
 

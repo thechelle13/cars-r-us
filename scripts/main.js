@@ -1,6 +1,5 @@
-// link to CarsRus which contains HTML
+import { CarsRus } from "./CarsRus.js"
 
-import { CarsRus } from "./CarsRus"
 
 const mainContainer = document.querySelector("#container")
 
