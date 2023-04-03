@@ -27,7 +27,7 @@ const technologies = getTechnologies()
 // )
 
 document.addEventListener(
-    "click",
+    "change",
     (event) => {
         if (event.target.id === "technology") {
             setTechnologies(parseInt(event.target.value))
@@ -39,7 +39,7 @@ document.addEventListener(
 export const Technologies = () => {
     //const customOrder = getCurrentOrder()
     // ${customOrder.metalId === metal.id ? "ch 
-    let html = "<select>"
+    let html = '<select id="technology">'
 
     // This is how you have been converting objects to <li> elements
     for (const technology of technologies) {

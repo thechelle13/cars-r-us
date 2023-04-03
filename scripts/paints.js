@@ -27,7 +27,7 @@ const paints = getPaints()
 // )
 
 document.addEventListener(
-    "click",
+    "change",
     (event) => {
         if (event.target.id === "paints") {
             setPaints(parseInt(event.target.value))
@@ -40,7 +40,7 @@ document.addEventListener(
 export const Paints = () => {
     //const customOrder = getCurrentOrder()
     // ${customOrder.metalId === metal.id ? "ch 
-    let html = "<select>"
+    let html = '<select id="paints">'
 
     // This is how you have been converting objects to <li> elements
     for (const paint of paints) {

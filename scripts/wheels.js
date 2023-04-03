@@ -1,6 +1,6 @@
 // create import so can access array in database - invoke to use.
 
-import { getWheels, setWheels, } from "./database.js";
+import { getWheels, setWheels } from "./database.js";
 
 const wheels = getWheels()
 
@@ -29,7 +29,7 @@ const wheels = getWheels()
 
 
 document.addEventListener(
-    "click",
+    "change",
     (event) => {
         if (event.target.id === "wheels") {
             setWheels(parseInt(event.target.value))
@@ -43,7 +43,7 @@ document.addEventListener(
 export const Wheels = () => {
     //const customOrder = getCurrentOrder()
     // ${customOrder.metalId === metal.id ? "ch 
-    let html = "<select>"
+    let html = '<select id="wheels">'
 
     // This is how you have been converting objects to <li> elements
     for (const wheel of wheels) {

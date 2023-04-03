@@ -1,7 +1,6 @@
 // create import so can access array in database - invoke to use.
 
-import { getInteriors, setInterniors 
- } from "./database.js"
+import { getInteriors, setInteriors } from "./database.js"
 
 const interiors = getInteriors()
 
@@ -28,7 +27,7 @@ const interiors = getInteriors()
 // )
 
 document.addEventListener(
-    "click",
+    "change",
     (event) => {
         if (event.target.id === "interiors") {
             setInteriors(parseInt(event.target.value))
@@ -40,7 +39,7 @@ document.addEventListener(
 export const Interiors = () => {
     //const customOrder = getCurrentOrder()
     // ${customOrder.metalId === metal.id ? "ch 
-    let html = "<select>"
+    let html = '<select id="interiors">'
 
     // This is how you have been converting objects to <li> elements
     for (const interior of interiors) {

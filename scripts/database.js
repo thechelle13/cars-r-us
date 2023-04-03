@@ -1,6 +1,7 @@
 // create database include data from book module
 
 const database = {
+    orderBuilder: {},
     // Customer should be able to choose one of the following paint colors. You set the price for each one.
     paints: [
         { id: 1, paint: "Silver", price: 100},
@@ -58,7 +59,7 @@ export const setPaints = (id) => {
 export const getInteriors = () => {
     return database.interiors.map(interior => ({...interior}))
 }
-export const setInterniors = (id) => {
+export const setInteriors = (id) => {
     database.orderBuilder.interiorId = id
 }
 
@@ -83,8 +84,8 @@ export const addCustomOrder = () => {
     const newOrder = {...database.orderBuilder}
 
     // Add a new primary key to the object
-    const lastIndex = database.customOrders.length - 1
-    newOrder.id = database.customOrders[lastIndex].id + 1
+   // const lastIndex = database.customOrders.length - 1
+    newOrder.id = database.customOrders.length + 1
 
     // Add a timestamp to the order
     newOrder.timestamp = Date.now()

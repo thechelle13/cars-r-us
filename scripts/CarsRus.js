@@ -10,7 +10,7 @@ import { Orders } from "./orders.js"
 // event listener with click not change
 
 document.addEventListener(
-    "change",
+    "click",
     (event) => {
         if (event.target.id === "order") {
             addCustomOrder()
